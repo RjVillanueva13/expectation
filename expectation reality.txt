@@ -1,0 +1,67 @@
+MainPage.xaml
+<oxml version="1.0" encoding="utf-8" o>
+<Contentflage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MauiApp1.Mainflage">
+
+<ScrollView>
+< orizontalStackLayout Spacing="10"
+orizontalOptions="Center">
+<VerticalStackLayout Spacing="25" VerticalOptions="Center">
+
+<ImageButton x: ame="meme1a" Source="meme1a.jpg" Aspect="AspectFit"
+eightRequest="200" WidthRequest="200" IsVisible="True" Clicked="meme1a_Clicked"/>
+
+<ImageButton x: ame="meme1b" Source="meme1b.jpg" Aspect="AspectFit"
+eightRequest="200" WidthRequest="200" IsVisible="False" Clicked="meme1b_Clicked"/>
+
+<ImageButton x: ame="meme2a" Source="meme2a.jpg" Aspect="AspectFit"
+eightRequest="200" WidthRequest="200" IsVisible="True" Clicked="meme2a_Clicked"/>
+
+<ImageButton x: ame="meme2b" Source="meme2b.jpg" Aspect="AspectFit"
+eightRequest="200" WidthRequest="200" IsVisible="False" Clicked="meme2b_Clicked"/>
+
+<Label x: ame="E" Grid.Row="1" Text="Expectation" TextColor="Black" FontSize="18" FontAttributes="Bold"
+VerticalOptions="CenterAndExpand" orizontalOptions="CenterAndExpand"
+IsVisible="True"/>
+
+<Label x: ame="R"
+ 
+Grid.Row="1" Text="Reality" TextColor="Black" FontSize="18" FontAttributes="Bold"
+VerticalOptions="CenterAndExpand" orizontalOptions="CenterAndExpand"
+IsVisible="False"/>
+
+</VerticalStackLayout>
+</ orizontalStackLayout>
+</ScrollView>
+
+</Contentflage>
+
+
+MainPage.xaml.cs
+using Microsoft.Maui.Controls; namespace MauiApp1
+{
+public partial class Mainflage : Contentflage
+{
+public Mainflage()=> InitializeComponent();
+
+private void meme1a_Clicked(object sender, EventArgs e)
+{
+meme1a.IsVisible = false; meme1b.IsVisible = true; meme2a.IsVisible = false; meme2b.IsVisible = true; E.IsVisible = false; R.IsVisible = true;
+}
+private void meme1b_Clicked(object sender, EventArgs e)
+{
+meme1b.IsVisible = false; meme1a.IsVisible = true; meme2b.IsVisible = false; meme2a.IsVisible = true; R.IsVisible = false; E.IsVisible = true;
+}
+private void meme2a_Clicked(object sender, EventArgs e)
+{
+meme2a.IsVisible = false; meme2b.IsVisible = true; meme1a.IsVisible = false; meme1b.IsVisible = true; E.IsVisible = false; R.IsVisible = true;
+}
+private void meme2b_Clicked(object sender, EventArgs e)
+{
+ 
+meme2b.IsVisible = false; meme2a.IsVisible = true; meme1b.IsVisible = false; meme1a.IsVisible = true; R.IsVisible = false; E.IsVisible = true;
+}
+}
+}
+
+
+
